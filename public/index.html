@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./style.css" rel="stylesheet" />
-    <link href="./normalize.css" rel="stylesheet" />
+    <link href="../dist/compiled.css" rel="stylesheet" />
     <title>Klerk</title>
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="logo">
+    <div class="wrapper container mx-auto pt-53px">
+      <header class="flex flex-col items-center">
+        <div class="logo mb-35px">
           <svg
             width="76"
             height="36"
@@ -42,97 +40,199 @@
             </defs>
           </svg>
         </div>
-        <ul class="bread-crumbs-list">
-          <li class="bread-crumbs-item text-3xl font-bold underline">
-            Хлебные крошки
-          </li>
+        <ul
+          class="bread-crumbs-list list-none flex justify-between text-gray-300 text-sm"
+        >
+          <li class="bread-crumbs-item">Хлебные крошки</li>
           <li class="bread-crumbs-item">Хлебные крошки</li>
           <li class="bread-crumbs-item">Хлебные крошки</li>
         </ul>
-        <h1 class="title">Подписки "Клерка"</h1>
+        <h1 class="title text-xxl font-medium">Подписки "Клерка"</h1>
         <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item">Рассылки</li>
+          <ul
+            class="nav-list list-none flex justify-between text-md text-gray-600"
+          >
+            <li class="nav-item active">Рассылки</li>
             <li class="nav-item">Соцсети</li>
             <li class="nav-item">Мессенджеры</li>
           </ul>
         </nav>
       </header>
-      <main class="main">
-        <section>
-          <h2 class="main-title">
+      <main class="main bg-gray-100">
+        <section class="forms">
+          <h2 class="main-title text-xl font-medium">
             Выберите рассылки, которые подходят именно вам
           </h2>
-          <form class="form">
-            <input class="input" type="email" placeholder="Электронная почта" />
-            <button class="button" type="submit">Подписаться</button>
-            <input type="checkbox" class="switch" id="switch" />
-            <label class="label" for="switch"
-              >Подписаться на все рассылки</label
+          <form class="form flex relative">
+            <input
+              class="input relative z-index-0 text-gray-600"
+              type="email"
+              placeholder="Электронная почта "
+            />
+            <button
+              class="button text-white-100 bg-blue-100 absolute right-0 z-index-2"
+              type="submit"
             >
+              Подписаться
+            </button>
           </form>
+          <div class="subscription flex items-center">
+            <form class="flex items-baseline">
+              <label
+                for="check"
+                class="subscription-label bg-gray-500 rounded-full relative cursor-pointer"
+              >
+                <input
+                  class="subscription-input sr-only peer"
+                  type="checkbox"
+                  id="check"
+                />
+                <span
+                  class="subscription-indicator absolute bg-white-100 rounded-full peer-checked:left-5 transition-all duration-500"
+                ></span>
+              </label>
+            </form>
+            <span class="subscription-text text-base"
+              >Подписаться на все рассылки</span
+            >
+          </div>
         </section>
         <section class="cards">
           <div class="card">
-            <span>Перед рассветом</span>
-            <h3>Утренний бухгалтер</h3>
-            <p>
-              Самые важные новости и события за день. Кратко, по делу,
-              структурированно.
+            <img
+              class="card-picture"
+              src="../img/img1.png"
+              width="80px"
+              height="80px"
+            />
+            <span class="card-signature">Перед рассветом</span>
+            <h3 class="card-title">Утренний бухгалтер</h3>
+            <p class="card-description">
+              Самые важные новости и события за день. <br />
+              Кратко, по делу, структурированно.
             </p>
-            <ul>
-              <li>Новости для бухгалтеров, ИП и директора</li>
-              <li>Подборка статей за день</li>
+            <ul class="card-list">
+              <li class="card-item flex">
+                Новости для бухгалтеров, ИП и директора
+              </li>
+              <li class="card-item">Подборка статей за день</li>
             </ul>
-            <input type="checkbox" id="check1" />
-            <label for="check1">Уже получает 59 342 человек</label>
+            <div class="card-form">
+              <form class="flex items-baseline">
+                <label for="check1" class="card-label">
+                  <input
+                    class="card-input sr-only peer"
+                    type="checkbox"
+                    id="check1"
+                  />
+                  <span class="card-indicator"></span>
+                </label>
+              </form>
+              <span class="card-number">Уже получает 59 342 человек</span>
+            </div>
           </div>
           <div class="card">
-            <span>После заката</span>
-            <h3>Ночной бухгалтер</h3>
-            <p>
+            <img
+              class="card-picture"
+              src="../img/img2.png"
+              width="80px"
+              height="80px"
+            />
+            <span class="card-signature">После заката</span>
+            <h3 class="card-title">Ночной бухгалтер</h3>
+            <p class="card-description">
               Самая краткая газета о налогах и бухучете в мире — современная
               рассылка для чтения.
             </p>
-            <ul>
-              <li>Анализ, оценка и только самое главное</li>
-              <li>Лучшие комменты юзеров в обзоре</li>
+            <ul class="card-list">
+              <li class="card-item">Анализ, оценка и только самое главное</li>
+              <li class="card-item">Лучшие комменты юзеров в обзоре</li>
             </ul>
-            <input type="checkbox" id="check2" />
-            <label for="check2">Уже получает 37 480 человек</label>
+            <div class="card-form">
+              <form class="flex items-baseline">
+                <label for="check2" class="card-label">
+                  <input
+                    class="card-input sr-only peer"
+                    type="checkbox"
+                    id="check2"
+                  />
+                  <span class="card-indicator"></span>
+                </label>
+              </form>
+              <span class="card-number">Уже получает 37 480 человек</span>
+            </div>
           </div>
           <div class="card">
-            <span>Раз в две недели</span>
-            <h3>Ножницы скидок</h3>
-            <p>
+            <img
+              class="card-picture absolute right-6"
+              src="../img/img3.png"
+              width="80px"
+              height="80px"
+            />
+            <span class="card-signature">Раз в две недели</span>
+            <h3 class="card-title">Ножницы скидок</h3>
+            <p class="card-description">
               Подборка самых выгодных и полезных спецпредложений от надежных
               компаний.
             </p>
-            <ul>
-              <li>Акции и скидки от лидеров рынка</li>
-              <li>Те, кто подписался – экономят много денег</li>
+            <ul class="card-list">
+              <li class="card-item">Акции и скидки от лидеров рынка</li>
+              <li class="card-item">
+                Те, кто подписался – экономят много денег
+              </li>
             </ul>
-            <input type="checkbox" id="check3" />
-            <label for="check3">Уже получает 92 118 человек</label>
+            <div class="card-form">
+              <form class="flex items-baseline">
+                <label for="check3" class="card-label">
+                  <input
+                    class="card-input sr-only peer"
+                    type="checkbox"
+                    id="check3"
+                  />
+                  <span class="card-indicator"></span>
+                </label>
+              </form>
+              <span class="card-number">Уже получает 92 118 человек</span>
+            </div>
           </div>
           <div class="card">
-            <span>По мере появления анонсов</span>
-            <h3>Чемодан вебинаров</h3>
-            <p>
+            <img
+              class="card-picture absolute right-6"
+              src="../img/img4.png"
+              width="80px"
+              height="80px"
+            />
+            <span class="card-signature">По мере появления анонсов</span>
+            <h3 class="card-title">Чемодан вебинаров</h3>
+            <p class="card-description">
               Подборка с анонсами бесплатных вебинаров на самые топовые темы при
               участии экспертов.
             </p>
-            <ul>
-              <li>Никогда не пришлем платные вебинары</li>
-              <li>Подборка топовых тем для вебинаров</li>
+            <ul class="card-list">
+              <li class="card-item font-medium">
+                Никогда не пришлем платные вебинары
+              </li>
+              <li class="card-item">Подборка топовых тем для вебинаров</li>
             </ul>
-            <input type="checkbox" id="check" />
-            <label for="check">Уже получает 92 082 человек</label>
+            <div class="card-form">
+              <form class="flex items-baseline">
+                <label for="check4" class="card-label">
+                  <input
+                    class="card-input sr-only peer"
+                    type="checkbox"
+                    id="check4"
+                  />
+                  <span class="card-indicator"></span>
+                </label>
+              </form>
+              <span class="card-number">Уже получает 92 082 человек</span>
+            </div>
           </div>
         </section>
       </main>
       <footer class="footer">
         <svg
+          class="footer-icon mx-auto"
           width="196"
           height="48"
           viewBox="0 0 196 48"

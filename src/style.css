@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 0;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+  text-transform: none;
+  background-color: #fff;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.wrapper {
+  padding-top: 53px;
+}
+
+.logo {
+  margin-bottom: 26px;
+}
+
+.bread-crumbs-item:not(:last-child)::after {
+  content: "";
+  display: block;
+  background-image: url(../img/arrow.svg);
+  width: 13px;
+  height: 16px;
+  background-repeat: no-repeat;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.bread-crumbs-item::before {
+  content: "";
+  width: 105px;
+  height: 1px;
+  background-color: #e6edff;
+  position: absolute;
+  top: 16px;
+}
+
+.bread-crumbs-list {
+  width: 373px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.nav-list {
+  width: 296px;
+  height: 42px;
+}
+
+.nav-item {
+  padding-bottom: 16px;
+}
+
+.main {
+  padding-top: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+.forms {
+  margin-bottom: 32px;
+}
+
+.main-title {
+  margin-bottom: 24px;
+}
+
+.input {
+  width: 800px;
+  height: 56px;
+  margin-left: 24px;
+  padding-left: 16px;
+  border-radius: 10px;
+  margin-bottom: 19px;
+}
+
+.input::placeholder {
+  color: #666666;
+}
+
+.button {
+  width: 163px;
+  height: 56px;
+  border-radius: 100px;
+  margin-right: 24px;
+}
+
+.subscription {
+  width: 240px;
+  margin-left: 24px;
+}
+
+.subscription-label {
+  width: 32px;
+  height: 16px;
+}
+
+.subscription-indicator {
+  width: 14px;
+  height: 14px;
+  left: 0;
+  top: 1px;
+}
+
+.subscription-text {
+  margin-left: 8px;
+}
+
+.card {
+  padding: 24px;
+  width: 476px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  margin-bottom: 8px;
+}
+
+.card-description {
+  margin-bottom: 16px;
+}
+
+.card-list {
+  margin-bottom: 18px;
+}
+
+.card-item::before {
+  content: "";
+  display: block;
+  background-image: url(../img/done.svg);
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+.card-description {
+  max-width: 325px;
+}
+
+.card-label {
+  width: 48px;
+  height: 24px;
+}
+
+.card-indicator {
+  width: 22px;
+  height: 22px;
+  left: 0;
+  top: 1px;
+}
+
+.card-number {
+  margin-left: 9px;
+}
+
+@layer components {
+  .bread-crumbs-item {
+    @apply flex cursor-pointer relative;
+  }
+
+  .nav-item {
+    @apply hover:text-blue-200 cursor-pointer focus:text-blue-200 active:text-blue-200 active:border-b-2 border-blue-200;
+  }
+
+  .active {
+    @apply text-blue-200 border-b-2 border-blue-200;
+  }
+
+  .cards {
+    @apply flex flex-wrap justify-between;
+  }
+  .card {
+    @apply flex flex-col  bg-white-100 items-start relative;
+  }
+
+  .card-signature {
+    @apply text-sm text-gray-300;
+  }
+
+  .card-picture {
+    @apply absolute right-6;
+  }
+
+  .card-title {
+    @apply text-lg font-medium;
+  }
+
+  .card-description {
+    @apply text-base text-gray-600 text-left;
+  }
+
+  .card-list {
+    @apply flex flex-col items-start text-base font-normal;
+  }
+
+  .card-item {
+    @apply flex;
+  }
+
+  .card-form {
+    @apply flex items-center;
+  }
+
+  .card-label {
+    @apply bg-gray-500 rounded-full relative cursor-pointer;
+  }
+
+  .card-indicator {
+    @apply absolute bg-white-100 rounded-full peer-checked:left-7 transition-all duration-500;
+  }
+
+  .card-number {
+    @apply text-base;
+  }
+}
