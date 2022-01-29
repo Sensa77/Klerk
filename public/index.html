@@ -8,9 +8,9 @@
     <title>Klerk</title>
   </head>
   <body>
-    <div class="wrapper container mx-auto pt-53px">
+    <div class="wrapper container mx-auto pt-[29px] lg:pt-[53px]">
       <header class="flex flex-col items-center">
-        <div class="logo mb-35px">
+        <div class="logo mb-[30px] lg:mb-[26px]">
           <svg
             width="76"
             height="36"
@@ -41,58 +41,75 @@
           </svg>
         </div>
         <ul
-          class="bread-crumbs-list list-none flex justify-between text-gray-300 text-sm"
+          class="bread-crumbs-list list-none flex justify-between text-gray-300 text-sm items-center mb-[8px] lg:mb-[24px]"
         >
-          <li class="bread-crumbs-item">Хлебные крошки</li>
-          <li class="bread-crumbs-item">Хлебные крошки</li>
+          <li class="bread-crumbs-item">Главная</li>
+          <li class="bread-crumbs-arrow mt-[10px]"></li>
+          <li class="bread-crumbs-item">Рассылки</li>
+          <li class="bread-crumbs-arrow mt-[10px]"></li>
           <li class="bread-crumbs-item">Хлебные крошки</li>
         </ul>
-        <h1 class="title text-xxl font-medium">Подписки "Клерка"</h1>
+        <h1 class="title text-xxl font-medium lg:text-xxxl mb-[24px]">
+          Подписки "Клерка"
+        </h1>
         <nav class="nav">
           <ul
-            class="nav-list list-none flex justify-between text-md text-gray-600"
+            class="nav-list list-none flex justify-between text-md text-gray-600 h-[42px]"
           >
-            <li class="nav-item active">Рассылки</li>
-            <li class="nav-item">Соцсети</li>
+            <li class="nav-item active mr-[24px]">Рассылки</li>
+            <li class="nav-item mr-[24px]">Соцсети</li>
             <li class="nav-item">Мессенджеры</li>
           </ul>
         </nav>
       </header>
-      <main class="main bg-gray-100">
-        <section class="forms">
-          <h2 class="main-title text-xl font-medium">
+      <main
+        class="main bg-gray-100 pt-[32px] pr-[16px] pl-[16px] pb-[32px] lg:pt-[48px] lg:pb-[48px] lg:pr-[24px] lg:pl-[24px] rounded-[16px]"
+      >
+        <section class="forms mb-[24px] lg:mb-[32px]">
+          <h2
+            class="main-title text-xl font-medium text-left lg:text-center mb-[16px] lg:mb-[24px]"
+          >
             Выберите рассылки, которые подходят именно вам
           </h2>
-          <form class="form flex relative">
+          <form class="form flex relative mb-[16px]">
             <input
-              class="input relative z-index-0 text-gray-600"
+              class="input relative z-index-0 text-gray-600 w-[325px] lg:w-[800px] h-[56px] lg:ml-[24px] pl-[16px] rounded-[10px]"
               type="email"
               placeholder="Электронная почта "
             />
             <button
-              class="button text-white-100 bg-blue-100 absolute right-0 z-index-2"
+              class="button-desktop text-white-100 bg-blue-100 absolute right-0 z-index-2 w-[163px] h-[56px] rounded-[100px] mr-[24px]"
               type="submit"
             >
               Подписаться
             </button>
-          </form>
-          <div class="subscription flex items-center">
-            <form class="flex items-baseline">
-              <label
-                for="check"
-                class="subscription-label bg-gray-500 rounded-full relative cursor-pointer"
+            <button
+              class="button-mobile text-white-100 bg-blue-100 absolute right-0 z-index-2 w-[56px] h-[56px] rounded-full pl-[23px]"
+              type="submit"
+            >
+              <svg
+                width="9"
+                height="14"
+                viewBox="0 0 9 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <input
-                  class="subscription-input sr-only peer"
-                  type="checkbox"
-                  id="check"
+                <path
+                  d="M0.349976 12.355L5.69331 7L0.349976 1.645L1.99498 0L8.99498 7L1.99498 14L0.349976 12.355Z"
+                  fill="white"
                 />
-                <span
-                  class="subscription-indicator absolute bg-white-100 rounded-full peer-checked:left-5 transition-all duration-500"
-                ></span>
-              </label>
+              </svg>
+            </button>
+          </form>
+          <div class="subscription flex items-center lg:ml-[24px]">
+            <form class="flex items-baseline">
+              <div class="switch w-[32px] h-[16px]">
+                <input class="switch-input peer" type="checkbox" id="check" />
+                <label for="check" class="switch-label"> </label>
+                <label for="check" class="switch-indicator"></label>
+              </div>
             </form>
-            <span class="subscription-text text-base"
+            <span class="subscription-text text-base ml-[8px]"
               >Подписаться на все рассылки</span
             >
           </div>
@@ -119,14 +136,19 @@
             </ul>
             <div class="card-form">
               <form class="flex items-baseline">
-                <label for="check1" class="card-label">
+                <div class="switch card__switch">
                   <input
-                    class="card-input sr-only peer"
+                    class="switch-input peer"
                     type="checkbox"
                     id="check1"
                   />
-                  <span class="card-indicator"></span>
-                </label>
+                  <label
+                    for="check1"
+                    class="switch-label bg-gray-500 rounded-full relative cursor-pointer transition-all duration-500 peer-checked:bg-blue-100"
+                  >
+                  </label>
+                  <label for="check1" class="switch-indicator"></label>
+                </div>
               </form>
               <span class="card-number">Уже получает 59 342 человек</span>
             </div>
@@ -150,14 +172,19 @@
             </ul>
             <div class="card-form">
               <form class="flex items-baseline">
-                <label for="check2" class="card-label">
+                <div class="switch card__switch">
                   <input
-                    class="card-input sr-only peer"
+                    class="switch-input peer"
                     type="checkbox"
                     id="check2"
                   />
-                  <span class="card-indicator"></span>
-                </label>
+                  <label
+                    for="check2"
+                    class="switch-label bg-gray-500 rounded-full relative cursor-pointer transition-all duration-500 peer-checked:bg-blue-100"
+                  >
+                  </label>
+                  <label for="check2" class="switch-indicator"></label>
+                </div>
               </form>
               <span class="card-number">Уже получает 37 480 человек</span>
             </div>
@@ -177,20 +204,23 @@
             </p>
             <ul class="card-list">
               <li class="card-item">Акции и скидки от лидеров рынка</li>
-              <li class="card-item">
-                Те, кто подписался – экономят много денег
-              </li>
+              <li class="card-item">Те, кто подписался – экономят много денег <span class="inline-block lg:hidden">🤑</span></li>
             </ul>
             <div class="card-form">
               <form class="flex items-baseline">
-                <label for="check3" class="card-label">
+                <div class="switch card__switch">
                   <input
-                    class="card-input sr-only peer"
+                    class="switch-input peer"
                     type="checkbox"
                     id="check3"
                   />
-                  <span class="card-indicator"></span>
-                </label>
+                  <label
+                    for="check3"
+                    class="switch-label bg-gray-500 rounded-full relative cursor-pointer transition-all duration-500 peer-checked:bg-blue-100"
+                  >
+                  </label>
+                  <label for="check3" class="switch-indicator"></label>
+                </div>
               </form>
               <span class="card-number">Уже получает 92 118 человек</span>
             </div>
@@ -216,14 +246,19 @@
             </ul>
             <div class="card-form">
               <form class="flex items-baseline">
-                <label for="check4" class="card-label">
+                <div class="switch card__switch">
                   <input
-                    class="card-input sr-only peer"
+                    class="switch-input peer"
                     type="checkbox"
                     id="check4"
                   />
-                  <span class="card-indicator"></span>
-                </label>
+                  <label
+                    for="check4"
+                    class="switch-label bg-gray-500 rounded-full relative cursor-pointer transition-all duration-500 peer-checked:bg-blue-100"
+                  >
+                  </label>
+                  <label for="check4" class="switch-indicator"></label>
+                </div>
               </form>
               <span class="card-number">Уже получает 92 082 человек</span>
             </div>

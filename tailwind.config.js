@@ -11,7 +11,8 @@ module.exports = {
       md: ["16px", "24px"],
       lg: ["20px", "28px"],
       xl: ["24px", "32px"],
-      xxl: ["56px", "72px"],
+      xxl: ["32px", "42px"],
+      xxxl: ["56px", "72px"],
     },
     colors: {
       gray: {
