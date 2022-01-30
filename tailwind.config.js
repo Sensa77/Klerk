@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./public/index.html"],
+  content: ["./src/**/*.{html,js}", "./index.html"],
   theme: {
     screens: {
       sm: "375px",
@@ -33,6 +33,10 @@ module.exports = {
       white: {
         100: "#fff",
       },
+
+      black: {
+        100: "#000000"
+      }
     },
     extend: {},
   },

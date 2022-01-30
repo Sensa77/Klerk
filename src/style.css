@@ -44,7 +44,7 @@ a {
 .bread-crumbs-arrow {
   width: 13px;
   height: 16px;
-  background-image: url(../img/arrow.svg);
+  background-image: url(../public/img/arrow.svg);
   background-repeat: no-repeat;
 }
 
@@ -55,6 +55,11 @@ a {
   background-color: #e6edff;
   position: absolute;
   top: 16px;
+}
+
+.bread-crumbs-item:hover::before,
+.bread-crumbs-item:focus::before {
+  background-color: #316FEE;
 }
 
 .bread-crumbs-list li:not(:last-child) {
@@ -81,9 +86,6 @@ a {
   margin-bottom: 24px;
 }
 
-.card-list {
-  margin-bottom: 18px;
-}
 
 .card__switch {
   width: 48px;
@@ -93,7 +95,7 @@ a {
 .card-item::before {
   content: "";
   display: inline-block;
-  background-image: url(../img/done.svg);
+  background-image: url(../public/img/done.svg);
   width: 16px;
   height: 12px;
   margin-right: 8px;
@@ -123,11 +125,15 @@ a {
 
 @layer components {
   .bread-crumbs-item {
-    @apply flex cursor-pointer relative;
+    @apply flex cursor-pointer relative hover:text-black-100 focus:text-black-100 hover:duration-500;
+  }
+
+  .bread-crumbs-arrow {
+    @apply mt-[10px]
   }
 
   .nav-item {
-    @apply hover:text-blue-200 cursor-pointer focus:text-blue-200 active:text-blue-200;
+    @apply hover:text-blue-200 cursor-pointer focus:text-blue-200 active:text-blue-200 hover:duration-500;
   }
 
   .active {
@@ -138,7 +144,7 @@ a {
     @apply flex flex-wrap justify-between;
   }
   .card {
-    @apply flex flex-col  bg-white-100 items-start relative w-[343px] lg:w-[476px] pt-[24px] pb-[24px] pr-[16px] pl-[16px] lg:p-[24px] rounded-[16px] h-[252px] lg:h-[244px];
+    @apply flex flex-col  bg-white-100 items-start relative w-[343px] lg:w-[476px] pt-[24px] pb-[24px] pr-[16px] pl-[16px] lg:p-[24px] rounded-[16px] h-auto lg:h-[244px];
   }
 
   .card-signature {
@@ -158,7 +164,7 @@ a {
   }
 
   .card-list {
-    @apply flex flex-col items-start text-base font-normal;
+    @apply flex flex-col items-start text-base font-normal mb-[24px] lg:mb-[16px];
   }
 
   .card-item {
@@ -194,7 +200,7 @@ a {
   }
 
   .switch-indicator {
-    @apply w-[45%] h-[90%] left-[1%] top-[50%] translate-y-[-50%] absolute bg-white-100 rounded-full cursor-pointer transition-all duration-500 peer-checked:left-[99%] peer-checked:translate-x-[-100%];
+    @apply w-[45%] h-[90%] left-[2%] top-[50%] translate-y-[-50%] absolute bg-white-100 rounded-full cursor-pointer transition-all duration-500 peer-checked:left-[98%] peer-checked:translate-x-[-100%];
   }
 
   .footer {
